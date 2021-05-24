@@ -1,0 +1,1 @@
+# DBMS mini project for 6th semester.
