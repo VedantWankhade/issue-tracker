@@ -33,7 +33,12 @@
     </label>
     <label for="status">
         Issue Status
-        <input type="text" id="status" name="status" value="<%= i.getStatus() %>">
+        <select name="status" id="status">
+            <option value="New">New</option>
+            <option value="Assigned">Assigned</option>
+            <option value="Fixed">Fixed</option>
+            <option value="Closed">Closed</option>
+        </select>
     </label>
     <label for="owner">
         Issue Owner
