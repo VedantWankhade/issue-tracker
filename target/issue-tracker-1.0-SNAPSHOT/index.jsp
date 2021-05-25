@@ -5,8 +5,12 @@
     <title>Issue Tracker</title>
 </head>
 <body>
-    <h1 class="heading">Issue Tracker</h1>
+
+    <header>
+        <h1 class="heading">Issue Tracker</h1>
+    </header>
     <h3 class="sub-heading">Keep track of all your issues</h3>
+    <h3>Made by Vedant, Om and Vittam</h3>
     <a href="./app.jsp">Go to the application</a>
 </body>
 </html>

@@ -13,7 +13,7 @@
 <%
     int i = IssueDao.save(u);
     if(i>0){
-        response.sendRedirect("addIssueSuccess.jsp");
+        response.sendRedirect("app.jsp");
     }else{
         response.sendRedirect("addIssueError.jsp");
     }

@@ -63,5 +63,9 @@
             </c:forEach>
         </table>
     </div>
+
+    <div class="statistics-link-container">
+        <a href="statistics.jsp">Statistics</a>
+    </div>
 </body>
 </html>
