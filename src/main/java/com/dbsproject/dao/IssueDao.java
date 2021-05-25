@@ -104,4 +104,19 @@ public class IssueDao {
         }catch(Exception e){System.out.println(e);}
         return i;
     }
+
+    public static int getTotalNumIssues() {
+        int count = 0;
+        try{
+            Connection con = getConnection();
+            PreparedStatement ps = con.prepareStatement("select count(id) from issues");
+            ResultSet rs = ps.executeQuery();
+
+            while(rs.next()) {
+                count = rs.getInt("count(id)");
+//                System.out.println(count);
+            }
+        }catch(Exception e){System.out.println(e);}
+        return count;
+    }
 }

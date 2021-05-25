@@ -64,8 +64,9 @@
         </table>
     </div>
 
-    <div class="statistics-link-container">
+    <div class="link-container">
         <a href="statistics.jsp">Statistics</a>
+        <a href="deletedIssueList.jsp">Deleted Issues</a>
     </div>
 </body>
 </html>
