@@ -17,10 +17,12 @@
 <%
     String id=request.getParameter("id");
     Issue i = IssueDao.getRecordById(Integer.parseInt(id));
+//    System.out.println(id);
 %>
 
 <h1>Edit Issue</h1>
 <form action="editIssue.jsp" method="post">
+    <input type="hidden" name="id" id="id" value="<%= i.getId() %>">
     <label for="title">
         Issue Title
         <input type="text" id="title" name="title" value="<%= i.getTitle() %>">
