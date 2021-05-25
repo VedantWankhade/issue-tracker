@@ -29,7 +29,7 @@
     </label>
     <label for="description">
         Issue Description
-        <textarea name="description" id="description" cols="30" rows="5" value="<%= i.getDescription() %>"></textarea>
+        <textarea name="description" id="description" cols="30" rows="5"><%= i.getDescription() %></textarea>
     </label>
     <label for="status">
         Issue Status
@@ -44,9 +44,9 @@
         Issue Owner
         <input type="text" id="owner" name="owner" value="<%= i.getOwner() %>">
     </label>
-    <label for="assigned">
+    <label for="assignedTo">
         Issue Assigned To
-        <input type="text" id="assigned" name="assigned" value="<%= i.getAssignedTo() %>">
+        <input type="text" id="assignedTo" name="assignedTo" value="<%= i.getAssignedTo() %>">
     </label>
     <button type="submit">Submit</button>
 </form>

@@ -41,9 +41,9 @@
                 Issue Owner
                 <input type="text" id="owner" name="owner" placeholder="Issue Owner">
             </label>
-            <label for="assigned">
+            <label for="assignedTo">
                 Issue Assigned To
-                <input type="text" id="assigned" name="assigned" placeholder="Issue Assigned To">
+                <input type="text" id="assignedTo" name="assignedTo" placeholder="Issue Assigned To">
             </label>
             <button type="submit">Submit</button>
         </form>
