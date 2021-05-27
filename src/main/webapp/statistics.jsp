@@ -15,11 +15,27 @@
 <body>
     <h1>STATS</h1>
 
-    <p>Total number of issues</p>
     <%
-        int count=IssueDao.getTotalNumIssues();
-        request.setAttribute("count",count);
+        int totalNumIssues=IssueDao.getTotalNumIssues();
+        request.setAttribute("totalNumIssues",totalNumIssues);
+        int fixedIssueNum = IssueDao.getNumFromStatus("Fixed");
+        request.setAttribute("fixedIssueNum", fixedIssueNum);
+        int assignedIssueNum = IssueDao.getNumFromStatus("Assigned");
+        request.setAttribute("assignedIssueNum", assignedIssueNum);
+        int closedIssueNum = IssueDao.getNumFromStatus("Closed");
+        request.setAttribute("closedIssueNum", closedIssueNum);
     %>
-<p>${count}</p>
+
+    <p>Total number of issues</p>
+    <p>${totalNumIssues}</p>
+
+    <p>Fixed Issues</p>
+    <p>${fixedIssueNum}</p>
+
+    <p>Assigned Issue</p>
+    <p>${assignedIssueNum}</p>
+
+    <p>Closed Issue</p>
+    <p>${closedIssueNum}</p>
 </body>
 </html>

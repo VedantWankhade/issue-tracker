@@ -119,4 +119,37 @@ public class IssueDao {
         }catch(Exception e){System.out.println(e);}
         return count;
     }
+
+    public static int getNumFromStatus(String status) {
+        int count = 0;
+        try{
+            Connection con = getConnection();
+            PreparedStatement ps = con.prepareStatement("select count(id) from issues where status=?");
+            ps.setString(1, status);
+            ResultSet rs = ps.executeQuery();
+
+            while(rs.next()) {
+                count = rs.getInt("count(id)");
+                System.out.println(count);
+            }
+        }catch(Exception e){System.out.println(e);}
+        return count;
+    }
+
+//    public static int getNumFromUser(String personType, String personName) {
+//        int count = 0;
+//        try{
+//            Connection con = getConnection();
+//            PreparedStatement ps = con.prepareStatement("select count(owner) from issues where ?=?");
+//            ps.setString(1, personType);
+//            ps.setString(2, personName);
+//            ResultSet rs = ps.executeQuery();
+//
+//            while(rs.next()) {
+//                count = rs.getInt("count(owner)");
+//                System.out.println(personName + ": " + count);
+//            }
+//        }catch(Exception e){System.out.println(e);}
+//        return count;
+//    }
 }
