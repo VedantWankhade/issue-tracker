@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="bootstrap-5.0.1-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="issueForm.css">
     <link rel="stylesheet" href="main.css">
-    <title>App</title>
+    <title>Issue Tracker App</title>
 </head>
 
 <body>

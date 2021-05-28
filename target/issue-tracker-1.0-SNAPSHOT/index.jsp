@@ -9,7 +9,7 @@
 <html>
 <head>
     <link rel="stylesheet" href="bootstrap-5.0.1-dist/css/bootstrap.min.css">
-    <title>Test</title>
+    <title>Issue Tracker</title>
 </head>
 <body>
     <header>
