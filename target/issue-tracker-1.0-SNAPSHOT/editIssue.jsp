@@ -11,5 +11,9 @@
 <jsp:setProperty property="*" name="u"/>
 <%
     int i=IssueDao.update(u);
-    response.sendRedirect("app.jsp");
+    if(i>0){
+        response.sendRedirect("app.jsp");
+    }else{
+        response.sendRedirect("addIssueError.jsp");
+    }
 %>
