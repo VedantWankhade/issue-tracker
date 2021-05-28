@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Vedant
-  Date: 24-05-2021
-  Time: 07:56 PM
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@page import="com.dbsproject.dao.IssueDao,com.dbsproject.bean.*,java.util.*"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -83,8 +76,6 @@
                         <th>Delete</th>
                     </tr>
                 </thead>
-    <%--            <tr><th>Id</th><th>Title</th><th>Description</th><th>Status</th>--%>
-    <%--                <th>Owner</th><th>Assigned To</th><th>Edit</th><th>Delete</th></tr>--%>
                 <c:forEach items="${list}" var="i">
                     <tr>
                         <td>${i.getId()}</td>
