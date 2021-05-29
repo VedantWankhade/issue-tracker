@@ -5,6 +5,11 @@
     <link rel="stylesheet" href="navbar.css">
     <title>nav</title>
 </head>
+
+<%
+    System.out.println(session.getAttribute("loggedIn"));
+    request.setAttribute("loggedIn", session.getAttribute("loggedIn"));
+%>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
     <a class="navbar-brand" href="#">Issue Tracker</a>
@@ -25,6 +30,17 @@
             <li class="nav-item">
                 <a class="nav-link" href="statistics.jsp">Statistics</a>
             </li>
+            <li class="nav-item" id="register-button">
+                <a class="nav-link" href="registerForm.jsp">Register</a>
+            </li>
+            <li class="nav-item" id="log-in-button">
+                <a class="nav-link" href="loginForm.jsp">LogIn</a>
+            </li>
+            <li class="nav-item" id="log-out-button" style="display: none">
+                <form action="LogoutServlet" method="post">
+                    <button style="background-color: inherit; border: none" class="nav-link" type="submit" id="logoutButton">LogOut</button>
+                </form>
+            </li>
         </ul>
     </div>
 </nav>
@@ -33,5 +49,16 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-<script></script>
+<script>
+    if(${loggedIn}) {
+        const loginButton = document.getElementById("log-in-button");
+        const registerButton = document.getElementById("register-button");
+
+        loginButton.style.display = "none";
+        registerButton.style.display = "none";
+
+        const logoutButton = document.getElementById("log-out-button");
+        logoutButton.style.display = "block";
+    }
+</script>
 </html>

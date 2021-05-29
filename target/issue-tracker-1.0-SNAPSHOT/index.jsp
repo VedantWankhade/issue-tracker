@@ -8,7 +8,6 @@
     <header>
         <jsp:include page="navbar.jsp"></jsp:include>
     </header>
-
     <main>
         <div
         <%--        id="intro-example"--%>

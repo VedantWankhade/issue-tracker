@@ -9,6 +9,13 @@
     <title>Issue Tracker App</title>
 </head>
 
+<%
+    System.out.println(session.getAttribute("loggedIn"));
+    if (session.getAttribute("loggedIn") == null) {
+        request.getRequestDispatcher("loginForm.jsp").forward(request, response);
+    }
+%>
+
 <body>
     <header>
         <jsp:include page="navbar.jsp"></jsp:include>
