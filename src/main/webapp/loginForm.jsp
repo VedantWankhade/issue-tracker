@@ -23,6 +23,6 @@
         </tr>
     </table>
 </form>
-
+<p>If not registered, register <a href="registerForm.jsp">here</a></p>
 </body>
 </html>

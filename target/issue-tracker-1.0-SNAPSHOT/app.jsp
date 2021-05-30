@@ -12,10 +12,12 @@
 <%
     System.out.println(session.getAttribute("loggedIn"));
     System.out.println(session.getAttribute("username"));
+    System.out.println(session.getAttribute("admin"));
     if (session.getAttribute("loggedIn") == null) {
         request.getRequestDispatcher("loginForm.jsp").forward(request, response);
     }
     request.setAttribute("username", session.getAttribute("username"));
+    request.setAttribute("admin", session.getAttribute("admin"));
 %>
 
 <body>
@@ -67,7 +69,14 @@
         <div class="issue-list-container">
             <h2 style="margin-bottom: 50px; text-align: center">Issue List</h2>
             <%
-                List<Issue> list=IssueDao.getAllRecords();
+                List<Issue> list;
+                if (request.getAttribute("admin").toString().equals("true")) {
+                    list = IssueDao.getAllRecords();
+                } else {
+                    list = IssueDao.getUserRecords(request.getAttribute("username").toString());
+                    System.out.println("get user issues " + request.getAttribute("username").toString());
+                }
+
                 request.setAttribute("list",list);
             %>
 

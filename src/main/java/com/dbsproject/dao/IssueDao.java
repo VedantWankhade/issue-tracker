@@ -135,4 +135,26 @@ public class IssueDao {
         }catch(Exception e){System.out.println(e);}
         return count;
     }
+
+    public static List<Issue> getUserRecords(String username){
+        List<Issue> list=new ArrayList<Issue>();
+        System.out.println(username);
+        try{
+            Connection con = getConnection();
+            PreparedStatement ps = con.prepareStatement("select * from issues where owner=?");
+            ps.setString(1, username);
+            ResultSet rs = ps.executeQuery();
+            while(rs.next()){
+                Issue i = new Issue();
+                i.setId(rs.getInt("id"));
+                i.setTitle(rs.getString("title"));
+                i.setDescription(rs.getString("description"));
+                i.setStatus(rs.getString("status"));
+                i.setOwner(rs.getString("owner"));
+                i.setAssignedTo(rs.getString("assignedTo"));
+                list.add(i);
+            }
+        }catch(Exception e){System.out.println(e);}
+        return list;
+    }
 }
