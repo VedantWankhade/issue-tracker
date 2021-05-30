@@ -27,6 +27,7 @@
                     <div class="card">
                         <form class="form-card" action="editIssue.jsp" method="post">
                             <input type="hidden" name="id" id="id" value="<%= i.getId() %>">
+                            <input type="hidden" name="owner" id="owner" value="${username}">
                             <div class="row justify-content-between text-left">
                                 <div class="form-group col-sm-6 flex-column d-flex">
                                     <label for="title" class="form-control-label px-3">Title<span class="text-danger"> *</span></label>
@@ -41,15 +42,13 @@
                                     </select> </div>
                             </div>
                             <div class="row justify-content-between text-left">
-                                <div class="form-group col-sm-6 flex-column d-flex">
-                                    <label for="owner" class="form-control-label px-3">Owner<span class="text-danger"> *</span></label>
-                                    <input type="text" id="owner" name="owner" value="<%= i.getOwner() %>"> </div>
+<%--                                <div class="form-group col-sm-6 flex-column d-flex">--%>
+<%--                                    <label for="owner" class="form-control-label px-3">Owner<span class="text-danger"> *</span></label>--%>
+<%--                                    <input type="text" id="owner" name="owner" value="<%= i.getOwner() %>"> </div>--%>
                                 <div class="form-group col-sm-6 flex-column d-flex">
                                     <label for="assignedTo" class="form-control-label px-3">Assigend To</label>
                                     <input type="text" id="assignedTo" name="assignedTo" value="<%= i.getAssignedTo() %>"> </div>
-                            </div>
-                            <div class="row justify-content-between text-left">
-                                <div class="form-group col-12 flex-column d-flex">
+                                <div class="form-group col-sm-6 flex-column d-flex">
                                     <label for="description" class="form-control-label px-3">Description</label>
                                     <textarea id="description" name="description"><%=i.getDescription()%></textarea></div>
                             </div>

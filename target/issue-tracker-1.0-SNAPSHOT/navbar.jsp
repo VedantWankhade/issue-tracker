@@ -9,6 +9,7 @@
 <%
     System.out.println(session.getAttribute("loggedIn"));
     request.setAttribute("loggedIn", session.getAttribute("loggedIn"));
+    request.setAttribute("username", session.getAttribute("username"));
 %>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
@@ -40,6 +41,9 @@
                 <form action="LogoutServlet" method="post">
                     <button style="background-color: inherit; border: none" class="nav-link" type="submit" id="logoutButton">LogOut</button>
                 </form>
+            </li>
+            <li style="position: fixed;right: 25px;" class="nav-item" id="username">
+                <h3>${username}</h3>
             </li>
         </ul>
     </div>

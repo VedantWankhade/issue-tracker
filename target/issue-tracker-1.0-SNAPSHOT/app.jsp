@@ -11,9 +11,11 @@
 
 <%
     System.out.println(session.getAttribute("loggedIn"));
+    System.out.println(session.getAttribute("username"));
     if (session.getAttribute("loggedIn") == null) {
         request.getRequestDispatcher("loginForm.jsp").forward(request, response);
     }
+    request.setAttribute("username", session.getAttribute("username"));
 %>
 
 <body>
@@ -28,6 +30,7 @@
                     <h3>Add Issue</h3>
                     <div class="card">
                         <form class="form-card" action="addIssue.jsp">
+                            <input type="hidden" name="owner" id="owner" value="${username}">
                             <div class="row justify-content-between text-left">
                                 <div class="form-group col-sm-6 flex-column d-flex">
                                     <label for="title" class="form-control-label px-3">Title<span class="text-danger"> *</span></label>
@@ -42,15 +45,13 @@
                                     </select> </div>
                             </div>
                             <div class="row justify-content-between text-left">
-                                <div class="form-group col-sm-6 flex-column d-flex">
-                                    <label for="owner" class="form-control-label px-3">Owner<span class="text-danger"> *</span></label>
-                                    <input type="text" id="owner" name="owner"> </div>
+<%--                                <div class="form-group col-sm-6 flex-column d-flex">--%>
+<%--                                    <label for="owner" class="form-control-label px-3">Owner<span class="text-danger"> *</span></label>--%>
+<%--                                    <input type="text" id="owner" name="owner"> </div>--%>
                                 <div class="form-group col-sm-6 flex-column d-flex">
                                     <label for="assignedTo" class="form-control-label px-3">Assigend To</label>
                                     <input type="text" id="assignedTo" name="assignedTo"> </div>
-                            </div>
-                            <div class="row justify-content-between text-left">
-                                <div class="form-group col-12 flex-column d-flex">
+                                <div class="form-group col-sm-6 flex-column d-flex">
                                     <label for="description" class="form-control-label px-3">Description</label>
                                     <textarea id="description" name="description"></textarea></div>
                             </div>
