@@ -5,3 +5,10 @@
 .navbar {
     padding-left: 10px !important;
 }
+
+button {
+    padding: 8px 15px;
+    font-size: inherit !important;
+    font-weight: 300;
+    color: inherit !important;
+}

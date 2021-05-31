@@ -33,12 +33,6 @@ public class UserDao {
 
     public static User authenticate(String username, String password) {
 
-        String usernameDB = "";
-        String passwordDB = "";
-        boolean adminDB = false;
-
-        boolean status = false;
-
         try{
             Connection con = getConnection();
             PreparedStatement ps = con.prepareStatement(
@@ -48,8 +42,10 @@ public class UserDao {
 
             User u = new User();
             while (rs.next()) {
-                u.setUsername(rs.getString("username"));
-                u.setAdmin(rs.getBoolean("admin"));
+                if (rs.getString("password").equals(password)) {
+                    u.setUsername(rs.getString("username"));
+                    u.setAdmin(rs.getBoolean("admin"));
+                }
             }
             return u;
         }catch(Exception e){
